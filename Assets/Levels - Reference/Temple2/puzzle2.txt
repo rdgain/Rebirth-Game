@@ -1,0 +1,34 @@
+Puzzle 2
+- Backgrounds
+wwwwwwwwwwwwwwwwww
+wfffffbbfffffffffw
+wfffffffffbbfffbfw
+ffffffbffffbfffbbw
+wffffbfffffffffbfw
+wbfffbfffffffffffw
+wbbfffffffffffffff
+wkkkkkkkkkkkkkkkkw
+wkkkkkkkkkkkkkkkkw
+wfbffffffffffffffw
+wffffffbbfffffffbw
+wffffffbffffffffbw
+wcfffffbbfffffffbw
+wfbbfffbbffffffbfw
+wffbfffbbffffffffw
+wwwwwwwwwwwwwwwwww
+- Objects
+Q 1 12 Clone
+c 15 5 Chest
+s 16 14 switch1
+l 3 2 source
+l 4 11 mirror1
+l 8 4 mirror2
+l 14 12 mirror3
+l 13 4 mirror4
+l 9 13 sink
+- Entries
+0 3 w
+17 6 e
+- Comments
+win condition: mirros in right position, switch pressed => chest opens, get reward
+can switch control to clone / clone mimics player movements

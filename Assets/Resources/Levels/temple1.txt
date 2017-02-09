@@ -1,0 +1,26 @@
+Level1
+- Legend
+w Tiles/wall-1_32x32
+f Tiles/floor-1_32x32
+b Tiles/wall-2_32x32
+d Objects/Door
+s Objects/Switch
+m Objects/Moving_Block
+k Tiles/pit-1_32x32
+c Objects/Chest-64x64
+r Objects/Reward
+h Objects/SwitchSolver
+- Rooms
+Levels/Temple1/puzzle0
+Levels/Temple1/puzzle1
+Levels/Temple1/puzzle2
+Levels/Temple1/puzzle3
+Levels/Temple1/puzzle4
+- Level
+StartRoom Puzzle0
+StartRoomX 150
+StartRoomY 150
+RoomDistance 0
+Height 350
+Width 350
+RoomNumber 5

@@ -1,0 +1,33 @@
+Puzzle 3
+- Backgrounds
+wwwwwwwwwwwwwwwwwwww
+wfbbffffffkfffbbfffw
+wfbfffffffffsffffffw
+wffffffkffbbbbbffffw
+wfffffkskfbfsfbkfffw
+wffffffkffbfkkfskffw
+wbffffbbbbbffffffffw
+wbfQfffffffffffffffw
+wfffffffffffbfffcffw
+wffffbbbbbbbbffffffw
+wwwfwwwwwwwwwwwwwwww
+- Objects
+Q 3 7 Clone
+c 16 8 Chest
+s 15 5 switchR
+s 12 4 switchG
+s 12 2 switchB
+s 7 4 trap1
+H 6 7 hint
+- Entries
+3 10 s
+- Comments
+push switches in right order: R G B (for each switch check if previous was switched before enabling)
+if order messed up reset all switches
+win condition: switch B valid press => open chest, get reward
+hint: tiles with hint on them (R -> G -> B). player cannot interact with them, walks over.
+trap creates pits all around the tile
+win unlocks chest
+clone has specific path: 2right, 1down, 6right, 2up, 3right, 2down, 1right, 1down, 2right, 7up, 11left, 1down, 3left, 4down, repeat
+clone carries lantern, vision restricted to 5x5 area around clone
+cannot control clone

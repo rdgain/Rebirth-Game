@@ -1,0 +1,6 @@
+Follow theses 3 rules when accessing the repository.
+Assume your life depends on it.
+
+1) If it ends with '.meta' commit it.
+2) Do not touch '\Assets\Scenes\Rebirth.unity'. Make a copy of it named '\Assets\Scenes\[YOUR_NAME].unity'.
+3) If changes need to be moved to Rebirth, post on sharepoint. ONE person will be designated tho make the necessary changes.

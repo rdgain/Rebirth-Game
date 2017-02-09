@@ -1,0 +1,16 @@
+- Objects1
+15 0 28 10
+c 5 7 Chest
+r 1 1 Reward
+m 2 2 move
+m 7 2 move
+m 10 6 move
+s 4 2 switch1
+s 9 3 switch2
+s 12 5 switch3
+s 2 8 switch4
+d 6 10 door
+- Rules1
+start : no Reward
+create Reward : switch1 & switch2 & switch3 & switch4
+win : have Reward

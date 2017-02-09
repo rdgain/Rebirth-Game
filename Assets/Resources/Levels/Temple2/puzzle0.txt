@@ -1,0 +1,69 @@
+Puzzle0
+- Legend
+x Objects/BridgeFunc
+g Objects/PermaSwitch
+n Objects/Bridge
+h Objects/BlockDestroy
+e Objects/CloneControl0
+q Objects/Empty
+- Backgrounds
+wwwwwwwwwwwwwwwww
+wffffwkfffkwffffw
+wffffwkfffkwffffw
+wffffwkk kkwffffw
+wffff fwfwf ffffw
+wfffkkfffffwwwwww
+wkkkkkfffffwffffw
+wffffkkk kkkffffw
+wffffkfffffkffffw
+wffffkfffffkffffw
+wffff fffff ffffw
+wffffkfffffkffffw
+wwwwwwwwfwwwwwwww
+       wfw       
+       wfw       
+       wfw       
+       wfw       
+- Objects
+e 0 0 CloneControl
+x 0 0 BridgeFunc
+q 8 1 PitSpawn
+q 8 6 PitSpawnClone
+c 8 15 Chest
+Q 8 6 Clone
+h 8 12 BlockDestroy
+g 14 14 switchPerma1
+g 8 7 switchPerma2
+n 5 6 bridge1
+n 8 9 bridge2
+n 11 6 bridge3
+n 11 12 bridge4
+n 8 13 bridge5
+n 5 12 bridge6
+s 9 6 switch1
+s 7 6 switch2
+s 14 6 switch3
+s 3 6 switch4
+s 2 8 switch5
+s 2 12 switch6
+s 3 14 switch7
+s 14 9 switch8
+- TempFix
+- Entries
+8 0 s
+- Comments
+bridges are initially pits. when a bridge is activated, the player can move over the pit
+(create block object and drop it into the bit). if the switch is not permanent, when
+the player moves off it, the block is destroyed and the pit is reset.
+switch6 destroyes a block to create a path for the player
+Switch - object interactions
+switch1 : bridge3
+switch2 : bridge1
+switch3 : bridge3
+switch4 : bridge1
+switch5 : bridge6
+switch6 : BlockDestroy
+switch7 : bridge1
+switch8 : bridge4
+switchPerma1 : bridge5
+switchPerma2 : bridge2

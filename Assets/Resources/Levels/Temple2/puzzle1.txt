@@ -1,0 +1,43 @@
+Puzzle1
+- Legend
+l Objects/Mirror
+a Objects/LightSource
+z Objects/LightSink
+h Objects/MirrorSolverT2
+e Objects/CloneControl1
+q Objects/Empty
+- Backgrounds
+wwwwwwwwwwwwwwwwww
+wfffffbbfffffffffw
+wfffffffffbbfffbfw
+ffffffbffffbfffbbw
+wffffbfffffffffbfw
+wbfffffffffffffffw
+wkkkkkkkkkkkkkkkkw
+wfffffffffffffffbw
+wffffffbfbfffffffw
+wffffffbbffffffffw
+wfbbfffbbffffffffw
+wffbfffbbffffffffw
+wwwwwwwwwwwwwwwwww
+- Objects
+e 0 0 CloneControl
+h 0 0 MirrorSolverT2
+q 1 9 PitSpawn
+q 1 5 PitSpawnClone
+Q 1 3 Clone
+c 15 7 Chest
+s 16 4 switch1
+a 3 10 source
+l 4 4 mirror1
+l 8 8 mirror2
+l 14 3 mirror4
+l 13 8 mirror3
+z 9 2 sink
+- Entries
+0 9 w
+- Rules
+lightPath : source, mirror1, mirror2, mirror3, mirror4, sink
+- Comments
+win condition: mirros in right position, switch pressed => chest opens, get reward
+can switch control to clone / clone mimics player movements

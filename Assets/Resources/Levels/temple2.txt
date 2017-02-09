@@ -1,0 +1,27 @@
+Level2
+- Legend
+w Tiles/wallT2
+f Tiles/floorT2
+b Tiles/blockT2
+d Objects/Door3
+s Objects/Switch
+k Tiles/pitT2
+c Objects/Chest-64x64
+r Objects/Reward
+Q Objects/ShadowPlayer
+- Rooms
+Levels/Temple2/puzzle0
+Levels/Temple2/puzzle1
+Levels/Temple2/puzzle2
+Levels/Temple2/puzzle3
+Levels/Temple2/puzzle4
+- Level
+StartRoom Puzzle3
+StartRoomX 150
+StartRoomY 150
+RoomDistance 0
+Height 350
+Width 350
+RoomNumber 5
+- NotFinished
+Change as needed

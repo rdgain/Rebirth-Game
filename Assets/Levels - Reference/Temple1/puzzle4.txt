@@ -1,0 +1,14 @@
+- Objects4
+18 28 31 40 Offset
+p 3 1 Player
+c 11 10 Chest
+r 1 1 Reward
+a 3 1 Lswitch2
+s 10 1 Switch
+a 3 -1 Lswitch1
+d 3 0 door
+l 1 1 light
+- Rules4
+off light : switch1
+lose : collide pit
+win : have Reward

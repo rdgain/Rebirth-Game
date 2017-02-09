@@ -1,0 +1,31 @@
+Puzzle3
+- Legend
+l Objects/Mirror
+a Objects/LightSource
+z Objects/LightSink
+h Objects/MirrorSolver
+- Background
+wwwwwwwwwwwww 
+wfbbfffffffbw 
+wfffbfffffffww
+wffffffffffffw
+wbbbfffffffbff
+wwfffffffffbfw
+ wwffffffffffw
+  wfffbfffffbw
+  wbffbbfffbfw
+  wwwffffffffw
+    wwwwwwwwww
+- Objects
+h 0 0 MirrorSolver
+c 6 6 Chest
+l 6 8 mirror3
+z 2 8 lightSink
+a 10 8 lightSource
+l 4 4 mirror2
+l 9 3 mirror4
+d 13 6 door
+- Entries
+13 6 e
+- Rules
+lightPath : lightSource, mirror2, mirror3, mirror4, lightSink

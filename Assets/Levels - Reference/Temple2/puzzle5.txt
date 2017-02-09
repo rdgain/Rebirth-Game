@@ -1,0 +1,38 @@
+Puzzle 5
+- Background
+wwwwwwwwwwwwww
+wffffffffffffw
+fffffffffffffw
+wf>>>>kfffbvvw
+wf>>f>>kffbvvw
+wf>>f>>>kfbkfw
+wf>>>>f>>>bfvw
+w^ffvffffbffbw
+w^ffvvvffffffw
+w^fffffvfffffw
+w^ffffkkbbfffw
+w^fffffffffffw
+wwwwwwwwwwwwww
+- Objects
+Q 4 2 Clone
+s 4 4 permaSwitch1
+s 8 7 permaSwitch2
+s 3 9 permaSwitch3
+| 4 5 hook1
+| 6 6 hook2
+| 12 5 hook3
+| 6 9 hook4
+- Entries
+0 2 w
+- Comments
+tile characters: > = slide tile to the right (->) until hitting a wall, pit or normal floor
+tile characters: v = slide tile downwards until hitting a wall, pit or normal floor
+tile characters: ^ = slide tile upwards until hitting a wall, pit or normal floor 
+pits reset to start of the room
+player tethered to clone, max distance between them: 4 tiles (P--Q)
+win condition: all switches pressed (perma switches, stay on once pressed)
+hooks : only one character can stay on this tile; if occupied and another one comes accross, slides through to the next tile
+both characters (player and clone) can stand on the same switch tile
+if max tether size reached, characters can't move away from each other (even if affected by other forces => anchored)
+if win, unlock chest, get reward
+can switch control to clone

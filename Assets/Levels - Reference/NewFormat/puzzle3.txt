@@ -1,0 +1,28 @@
+Puzzle 3
+- Background
+wwwwwwwwwwwww 
+wfbbfffffffbw 
+wfffbfffffffww
+wffffffffffffw
+wbbbfffffffbfd
+wwfffffffffbfw
+ wwffffffffffw
+  wfffbfffffbw
+  wbffbbfffbfw
+  wwwffffffffw
+    wwwwwwwwww
+- Objects
+p 12 5 Player
+r 6 5 Reward
+l 6 2 mirror1
+l 3 3 mirror2
+l 10 3 mirror3
+l 4 7 mirror4
+l 8 8 mirror5
+d 13 5 door
+- Doors
+13 4
+- Rules
+start : no Reward
+win : have Reward
+lightPath : lightSource, mirror2, mirror3, mirror4, lightSink

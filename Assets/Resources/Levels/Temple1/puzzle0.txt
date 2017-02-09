@@ -1,0 +1,50 @@
+Puzzle0
+- Legend
+0 Tiles/maptile-center-left-1_32x32
+1 Tiles/maptile-center-left-2_32x32
+2 Tiles/maptile-center-left-3_32x32
+3 Tiles/maptile-center-left-4_32x32
+4 Tiles/maptile-center-left-5_32x32
+5 Tiles/maptile-center-right-1_32x32
+6 Tiles/maptile-center-right-2_32x32
+7 Tiles/maptile-center-right-3_32x32
+8 Tiles/maptile-center-right-4_32x32
+9 Tiles/maptile-center-right-5_32x32
+< Tiles/maptile-center-up-1_32x32
+^ Tiles/maptile-center-up-2_32x32
+> Tiles/maptile-center-up-3_32x32
+? Tiles/maptile-center-up-4_32x32
+! Tiles/maptile-center-up-5_32x32
+& Tiles/maptile-center-down-1_32x32
+* Tiles/maptile-center-down-2_32x32
+# Tiles/maptile-center-down-3_32x32
+= Tiles/maptile-center-down-4_32x32
++ Tiles/maptile-center-down-5_32x32
+p Objects/Spawn
+z Objects/Corpse
+h Objects/Altar1
+- Background
+      w<w      
+ wwwwww^wwwwww 
+ wfffff>fffffw 
+ wfffff?fffffw 
+ wfffff!fffffw 
+ wfffffffffffw 
+wwfffffffffffww
+01234fffff56789
+wwfffffffffffww
+ wfffffffffffw 
+ wfffff&fffffw 
+ wfffff*fffffw 
+ wfffff#fffffw 
+ wwwwww=wwwwww 
+      w+w      
+- Objects
+p 10 3 Spawn
+z 11 3 Corpse
+h 5 9 Altar
+- Exits
+7 0 s
+0 7 w
+14 7 e
+7 14 n

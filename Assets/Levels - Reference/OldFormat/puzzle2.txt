@@ -1,0 +1,31 @@
+wwwwwwwwww
+wfffbbfffw
+wffbsbfffwwww
+wffffffbffffw
+dfffffffffffwww
+wfkffbkfffffffw
+wfkfffffffffffwwww
+wwwfffffffffffbsfw
+  wfffkffffffkfffw
+  wwwwfffffffkkbww
+     wffbssbffffw
+     wfffbffffffw
+     wffffffbbffw
+     wwwwwwwwwwww
+- Objects
+p 1 4 Player
+r 16 7 Reward
+m 7 8 move1
+m 10 8 move2
+m 14 10 move3
+s 4 2 switch1
+s 7 15 switch2
+s 9 10 switch3
+s 10 10 switch4
+t 4 3 trap
+d 1 4 door
+- Rules
+start : no Reward
+create Reward : switch2 & switch3 & switch4
+trap : switch1
+win : have Reward

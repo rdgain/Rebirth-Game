@@ -1,0 +1,43 @@
+Puzzle4
+- Legend
+a Objects/FakeSwitch
+l Objects/darknessPrefab
+u Objects/Empty
+- Background
+  wfw         
+wwwfwwwwwwwwww
+wfffbf ffbff w
+w ffbffffbfffw
+wffbfffff fffw
+wff fffffbfffw
+wfffffbffff fw
+wfbfbbf  ffffw
+wffbffffffbbbw
+wfffffffffbffw
+wffff ffbbf fw
+wffbbfffff f w
+wffffffffffffw
+wwwwwwwwwwwwww
+- Objects
+h 0 0 SwitchSolver
+c 11 2 Chest
+a 3 11 Lswitch2
+s 10 11 Switch1
+a 3 13 Lswitch1
+d 3 12 door
+u 3 12 PitSpawn
+l 1 1 light
+k 1 10 pit1
+k 3 8 pit2
+k 5 3 pit3
+k 6 11 pit4
+k 7 6 pit5
+k 8 6 pit6
+k 9 9 pit7
+k 10 2 pit8
+k 11 7 pit9
+k 11 3 pit10
+k 12 11 pit11
+k 12 2 pit12
+- Entries
+3 13 n

@@ -1,0 +1,22 @@
+wwwdwwwwwwwwww
+wfffbfkffbffkw
+wkffbffffbfffw
+wffbfffffkfffw
+wffkfffffbfffw
+wfffffbffffkfw
+wfbfbbfkkffffw
+wffbffffffbbbw
+wfffffffffbffw
+wffffkffbbfkfw
+wffbbfffffkfkw
+wffffffffffffw
+wwwwwwwwwwwwww
+- Objects
+p 3 1 Player
+c 11 10 Chest
+r -50 -50 Reward
+s 3 1 switch1
+- Rules
+off light : switch1
+lose : collide pit
+win : have Reward

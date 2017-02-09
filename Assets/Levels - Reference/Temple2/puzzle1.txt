@@ -1,0 +1,58 @@
+Puzzle 1
+- Backgrounds
+wwwwwwwwwwwwwwwww
+wffffwkfffkwffffw
+wffffwkfffkwffffw
+wffffwkknkkwffffw
+wffffnfwhwfnffffw
+wfffkkfffffwwwwww
+wkkkkkfffffwffffw
+wffffkkknkkkffsfw
+wffffkfffffkffffw
+wffffkfffffkffffw
+wffsfnffQffnffffw
+wffffkffpffkffffw
+wwwwwwwwfwwwwwwww
+       wfw       
+       wfw       
+       wfw       
+       wfw       
+- Objects
+p 8 11 Player
+c 8 1 Chest
+Q 8 10 Clone
+h 8 4 BlockDestroy
+g 15 2 switchPerma1
+g 8 9 switchPerma2
+n 5 10 bridge1
+n 8 7 bridge2
+n 11 10 bridge3
+n 11 4 bridge4
+n 8 3 bridge5
+n 5 4 bridge6
+s 9 10 switch1
+s 7 10 switch2
+s 14 10 switch3
+s 3 10 switch4
+s 2 8 switch5
+s 2 4 switch6
+s 3 2 switch7
+s 15 7 switch8
+- Entries
+8 16 s
+- Comments
+bridges are initially pits. when a bridge is activated, the player can move over the pit
+(create block object and drop it into the bit). if the switch is not permanent, when
+the player moves off it, the block is destroyed and the pit is reset.
+switch6 destroyes a block to create a path for the player
+Switch - object interactions
+switch1 : bridge3
+switch2 : bridge1
+switch3 : bridge3
+switch4 : bridge1
+switch5 : bridge6
+switch6 : BlockDestroy
+switch7 : bridge1
+switch8 : bridge4
+switchPerma1 : bridge5
+switchPerma2 : bridge2

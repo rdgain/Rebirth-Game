@@ -1,0 +1,25 @@
+- Objects2
+29 15 46 28 Offset
+c 16 7 Chest
+m 7 8 move
+m 10 8 move
+m 14 10 move
+a 4 2 switchT1
+s 15 7 switch1
+s 9 10 switch2
+s 10 10 switch3
+r 5 5 Reward
+d 0 4 door
+t 4 3 trap1
+k 2 5 pit1
+k 2 6 pit2
+k 6 5 pit3
+k 6 8 pit4
+k 13 8 pit5
+k 13 9 pit6
+k 14 9 pit7
+- Rules2
+start : no Reward
+create Reward : switch2 & switch3 & switch4
+trap : switch1
+win : have Reward

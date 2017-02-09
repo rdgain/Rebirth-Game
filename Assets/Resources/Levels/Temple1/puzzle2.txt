@@ -1,0 +1,42 @@
+Puzzle2
+- Legend
+t Objects/FakeSwitch
+r Objects/trap_pit
+u Objects/Empty
+- Background
+wwwwwwwwww        
+wfffbbfffw        
+wffbfbfffwwww     
+wfff ffbffffw     
+ffffffffffffwww   
+wf ffb fffffffw   
+wf fffffffffffwwww
+wwwfffffffffffbffw
+  wfff ffffff fffw
+  wwwwfffffff  bww
+     wffbffbffffw 
+     wfffbffffffw 
+     wffffffbbffw 
+     wwwwwwwwwwww 
+- Objects
+h 0 0 SwitchSolver
+d 0 9 door
+u 1 9 PitSpawn
+k 2 7 pit1
+k 2 8 pit2
+r 4 10 trap1Pit
+t 4 11 trap1
+k 6 5 pt3
+k 6 8 pit4
+m 7 5 move1
+s 9 3 switch3
+s 10 3 switch4
+m 10 5 move2
+k 13 5 pit5
+k 13 4 pit6
+m 14 3 move3
+k 14 4 pit7
+s 15 6 switch2
+c 16 6 chest
+- Entries
+0 9 w

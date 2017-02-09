@@ -1,0 +1,50 @@
+Puzzle3
+- Legend
+p Objects/Spawn
+h Objects/CloneControl3
+j Objects/TempleSolver
+q Objects/Empty
+o Tiles/Door_Locked
+- Backgrounds
+wwwwfwwwwfwwwww
+wbffffbffffbffw
+wffbbfffbbfffbw
+ffbfbfffffffbfw
+wfbfffbffbfbffw
+wffffbffffffffw
+wffffbffbfffbfw
+wbffffffbfbfbff
+wfffbffbffbfffw
+ffbffbffffbffbw
+wfbfffffffffffw
+wfffbbfffbbfbfw
+wfbffffbfffffbw
+wwwwfwwwwfwwwww
+- Objects
+h 0 0 CloneControl
+j 0 0 TempleSolver
+q 7 7 PitSpawnClone
+Q 7 7 Clone
+p 4 1 Spawn
+d 14 6 Door
+d 9 0 Door
+d 9 13 Door
+d 0 4 Door
+o 0 10 Door
+o 4 0 Door
+o 4 13 Door
+- Exits
+14 6 e
+9 0 s
+9 13 n
+0 4 w
+- Disabled
+0 10 w
+4 0 s
+4 13 n
+- Comments
+have to cross room without being seen by clone (use raycasts to check clone view)
+player can spawn at any door, all but 1 of the other doors will be locked
+if spotted by the clone => time penalty
+clone AI: randomly walk around the room. if spotting player, chase.
+cannot control clone

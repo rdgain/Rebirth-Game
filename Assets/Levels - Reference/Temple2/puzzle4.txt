@@ -1,0 +1,32 @@
+Puzzle 4
+- Backgrounds
+wwwwfwwwwfwwwww
+wbffffbffffbffw
+wffbbfffbbfffbw
+ffbfbfffffffbfw
+wfbfffbffbfbffw
+wffffbffffffffw
+wffffbffbfffbfw
+wbffffffbfbfbff
+wfffbffbffbfffw
+ffbffbffffbffbw
+wfbfffffffffffw
+wfffbbfffbbfbfw
+wfbffffbfffffbw
+wwwwfwwwwfwwwww
+- Objects
+Q 7 6 Clone
+- Entries
+14 7 e
+9 13 s
+9 0 n
+4 13 s
+4 0 n
+0 9 w
+0 3 w
+- Comments
+have to cross room without being seen by clone (use raycasts to check clone view)
+player can spawn at any door, all but 1 of the other doors will be locked
+if spotted by the clone => time penalty
+clone AI: randomly walk around the room. if spotting player, chase.
+cannot control clone

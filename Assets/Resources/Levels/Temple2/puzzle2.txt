@@ -1,0 +1,75 @@
+Puzzle2
+- Legend
+h Objects/CloneDarkness
+s Objects/RedSwitch
+g Objects/GreenSwitch
+j Objects/BlueSwitch
+t Objects/FakeSwitchT2
+T Objects/FakeSwitch
+y Objects/TrapPitT2
+l Objects/RGBSwitchSolver
+q Objects/Empty
+B Objects/CloneBumper
+! Tiles/RedHint
+* Tiles/GreenHint
+& Tiles/BlueHint
+- Backgrounds
+wwwwwwwwwwwwwwwwwwww
+wfbbffffffkfffbbfffw
+wfbffffffffffffffffw
+wffffff ffbbbbbffffw
+wfffff f fbfffbkfffw
+wffffff ffbfkkffkffw
+&bffffbbbbbffffffffw
+*bfffffffffffffffffw
+!fffffffffffbffffffw
+wffffbbbbbbbbffffffw
+wwwfwwwwwwwwwwwwwwww
+  wfw               
+
+- Objects
+h 0 0 CloneDarkness
+l 0 0 RGBSwitchSolver
+T 3 0 Lswitch1
+T 3 2 Lswitch2
+q 3 1 PitSpawn
+Q 3 4 Clone
+c 16 3 Chest
+s 15 6 switchR
+g 12 9 switchG
+j 12 7 switchB
+t 7 7 trap1
+y 7 8 pit1
+y 7 6 pit2
+y 6 7 pit3
+y 8 7 pit4
+o 6 4 hint
+B 3 4 e1
+B 3 8 s1
+B 6 8 w1
+B 6 9 s2
+B 17 9 w2
+B 17 2 n1
+B 15 2 e2
+B 15 3 s3
+B 14 3 e3
+B 14 5 s4
+B 11 5 e4
+B 11 3 n2
+B 5 3 e5
+B 5 4 s5
+! 0 3 redHint
+* 0 4 greenHint
+& 0 5 blueHint
+- Entries
+3 0 s
+- Comments
+push switches in right order: R G B (for each switch check if previous was switched before enabling)
+if order messed up reset all switches
+win condition: switch B valid press => open chest, get reward
+hint: tiles with hint on them (R -> G -> B). player cannot interact with them, walks over.
+trap creates pits all around the tile
+win unlocks chest
+clone has specific path: 2right, 1down, 6right, 2up, 3right, 2down, 1right, 1down, 2right, 7up, 11left, 1down, 3left, 4down, repeat
+clone carries lantern, vision restricted to 5x5 area around clone
+cannot control clone

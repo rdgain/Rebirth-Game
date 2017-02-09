@@ -1,0 +1,19 @@
+Template
+- Section
+The name of the room must come before any section.
+Each section starts with "\n- "
+There can be as many sections as you want.
+Multiple sections with the same Name will be treated as the same one with contents in the order the sections appear.
+If the engine does not recognise a section name it will ignore that section.
+The following sections must exist at this point:
+Background: Map of prefab tiles. Must be rectangular.
+Objects: Layer above the background.
+Doors: Valid entry points into the puzzle. Used to generate surroundings.
+- Background
+www
+w#w
+w#w
+- Objects
+o 1 1 ObjectName
+- Doors
+1 2

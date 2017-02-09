@@ -1,0 +1,14 @@
+- Objects3
+0 14 12 24 Offset
+c 6 5 Chest
+r 1 1 Reward
+n 6 2 mirror3
+n 3 3 lightSink
+n 10 3 lightSource
+n 4 7 mirror2
+n 8 8 mirror4
+d 13 5 door
+- Rules3
+start : no Reward
+win : have Reward
+lightPath : lightSource, mirror2, mirror3, mirror4, lightSink

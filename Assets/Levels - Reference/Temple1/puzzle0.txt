@@ -1,0 +1,15 @@
+- Objects0
+15 13 27 25 Offset
+p 9 10 Player
+z 10 10 Corpse
+h 6 6 center
+q 6 4 northCarpet
+e 8 6 eastCarpet
+u 6 8 southCarpet
+y 4 6 westCarpet
+- Rules0
+northCarpet : Reward1
+southCarpet : Reward4
+eastCarpet : Reward2
+westCarpet : Reward3
+win : northCarpet & southCarpet & eastCarpet & westCarpet & center
