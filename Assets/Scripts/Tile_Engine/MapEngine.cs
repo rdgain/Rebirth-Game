@@ -633,7 +633,7 @@ public class MapEngine : MonoBehaviour
 	{
 		Transform bgTransform;
 
-		if (!transform.FindChild("Background"))
+		if (!transform.Find("Background"))
 		{
 		    GameObject bg = new GameObject {name = "Background"};
 		    bg.transform.parent = transform;
@@ -641,7 +641,7 @@ public class MapEngine : MonoBehaviour
 		}
 		else
 		{
-			bgTransform = transform.FindChild("Background");
+			bgTransform = transform.Find("Background");
 		}
 
 		for (int y = 0; y < Height; y++)
@@ -735,7 +735,7 @@ public class MapEngine : MonoBehaviour
 
 		Room room = rooms[roomName];
 
-        if (!transform.FindChild(roomName))
+        if (!transform.Find(roomName))
         {
             GameObject roomObject = new GameObject();
             roomObject.name = roomName;
@@ -751,7 +751,7 @@ public class MapEngine : MonoBehaviour
 	        {
 	            GameObject ob2 = (GameObject) Instantiate(ob, pos, transform.rotation);
 	            ob2.transform.name = room.Objects[i].Name;
-	            ob2.transform.parent = transform.FindChild(roomName);
+	            ob2.transform.parent = transform.Find(roomName);
 	        }
 	    }
 	}

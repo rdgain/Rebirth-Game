@@ -24,7 +24,7 @@ public class TempleSolver : MonoBehaviour {
 	            triggered = true;
 	            //destroy clone, create sister
 	            Destroy(clone);
-	            Vector3 vec3 = transform.parent.FindChild("PitSpawnClone").position;
+	            Vector3 vec3 = transform.parent.Find("PitSpawnClone").position;
 	            GameObject s = (GameObject) Instantiate(sister, new Vector3(vec3.x, vec3.y, -1.0f), transform.rotation);
 	            s.transform.parent = gameObject.transform;
 	        }

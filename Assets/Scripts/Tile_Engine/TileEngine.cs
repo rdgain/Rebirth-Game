@@ -44,7 +44,7 @@ public class TileEngine : MonoBehaviour {
 
 		mapData = mapBG.text.Split('\n');
 		int i = 0;
-		if (!this.transform.FindChild ("Background")) {
+		if (!this.transform.Find ("Background")) {
 			GameObject bg = new GameObject ();
 			bg.name = "Background";
 			bg.transform.parent = this.transform;
@@ -71,7 +71,7 @@ public class TileEngine : MonoBehaviour {
 				if (tile != null) {	
 					Vector3 pos = new Vector3 (j,-i,0.3f);
 					GameObject test = (GameObject)Instantiate(tile, pos, transform.rotation);
-					test.transform.parent = transform.FindChild("Background");
+					test.transform.parent = transform.Find("Background");
 				}
 			}
 			i++;
@@ -407,7 +407,7 @@ public class TileEngine : MonoBehaviour {
 	int addObjects(string[] mapData) {
 		int i = 0;
 		string objects = mapData [i].Split (' ')[1];
-		if (!this.transform.FindChild (objects)) {
+		if (!this.transform.Find (objects)) {
 			GameObject bg = new GameObject ();
 			bg.name = objects;
 			bg.transform.parent = this.transform;
@@ -439,7 +439,7 @@ public class TileEngine : MonoBehaviour {
 				pos = new Vector3(x, -y, 0);
 				GameObject ob2 = (GameObject)Instantiate(ob, pos, transform.rotation);
 				ob2.transform.name = name;
-				ob2.transform.parent = this.transform.FindChild(objects);
+				ob2.transform.parent = this.transform.Find(objects);
 			}
 
 			

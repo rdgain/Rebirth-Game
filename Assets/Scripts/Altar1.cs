@@ -26,22 +26,22 @@ public class Altar1 : MonoBehaviour {
         {
             if (tx < cx)
             {
-                transform.FindChild("right_carpet").GetComponent<Reward>().Found();
+                transform.Find("right_carpet").GetComponent<Reward>().Found();
             }
             else
             {
-                transform.FindChild("left_carpet").GetComponent<Reward>().Found();
+                transform.Find("left_carpet").GetComponent<Reward>().Found();
             }
         }
         else
         {
             if (ty < cy)
             {
-                transform.FindChild("top_carpet").GetComponent<Reward>().Found();
+                transform.Find("top_carpet").GetComponent<Reward>().Found();
             }
             else
             {
-                transform.FindChild("bottom_carpet").GetComponent<Reward>().Found();
+                transform.Find("bottom_carpet").GetComponent<Reward>().Found();
             }
         }
     }
