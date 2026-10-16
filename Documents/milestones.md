@@ -30,21 +30,26 @@ This document tracks the requested modernization and validation work. Progress d
 
 ## Milestone 4: Write gameplay unit tests
 
-**Status: Not started**
+**Status: Tests written; execution deferred to Milestone 5**
 
-- Derive tests from the design document and the Milestone 3 comparison.
-- Focus on independently testable gameplay rules and state transitions.
+- Added an EditMode test assembly at `Assets/Tests/EditMode` using Unity Test Framework 1.8.0.
+- Tests cover mirror-path tolerance, Temple 2 colored-switch sequence/reset, stopping the timer on level completion, and locating Temple 2's configured start room at its level-data coordinates.
+- The requirements PDF comparison remains pending from Milestone 3; these tests cover behaviors described by active code and the room-level design notes.
+- Tests have not been run. Execution and reporting are Milestone 5.
 
 ## Milestone 5: Run tests and report validation results
 
-**Status: Not started**
+**Status: Complete for the available EditMode suite; visual/browser checks remain outstanding**
 
-- Run the gameplay unit tests and Unity framework tests.
-- Write a results report and list failures or other issues for review.
-- Do not change implementation to fix issues found during this validation milestone.
+- Ran Unity batch import/script compilation validation successfully with Unity 6000.6.6f1.
+- Ran all available Unity EditMode tests: 5 passed, 0 failed, 0 skipped.
+- Built the enabled scenes for Windows 64-bit and WebGL successfully.
+- Wrote [Unity_validation_report.md](Unity_validation_report.md) with command results and limitations.
+- The project was not played in the GUI, and the WebGL output was not tested in a browser.
 
 ## Current validation notes
 
 - The user confirmed that input works after restarting Unity.
 - The current turn removed temporary UI diagnostics and the `Restart`, `Intro`, and `Start` debug messages.
-- Unity compilation and automated tests have not been run by this assistant during these milestones.
+- Unity 6000.6.6f1 batch validation, the available EditMode test suite, and Windows 64-bit/WebGL builds completed successfully; see [Unity_validation_report.md](Unity_validation_report.md).
+- The GUI was not opened for visual gameplay validation, and the WebGL output was not browser-tested.

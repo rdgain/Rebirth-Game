@@ -1,0 +1,9 @@
+{
+    "name": "RebirthGame.EditModeTests",
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ]
+}
