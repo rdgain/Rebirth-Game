@@ -1,42 +1,34 @@
-﻿using UnityEngine;
-using System.Collections;
+using UnityEngine;
+    /// <summary>Applies movement, action, and tether controls to clone four.</summary>
 
 public class Clone4Script : MonoBehaviour {
 	private Player player;
 	private CameraControl cam;
     private MapEngine mapEngine;
 	private GameObject clone;
-	private bool canMove, tether, tetherStop;
-	private float maxDist;
-	
-	
     public float speed = 1f;
 
 	// Use this for initialization
 	void Start () {
-		player = FindObjectOfType<Player>();	
-		cam = FindObjectOfType<CameraControl>();
+		player = FindAnyObjectByType<Player>();
+		cam = FindAnyObjectByType<CameraControl>();
 		clone = transform.parent.Find("Clone").gameObject;
-		mapEngine = FindObjectOfType<MapEngine>();
-		canMove = false;
-		tether = false;
-		tetherStop = false;
-		maxDist = 12;
+		mapEngine = FindAnyObjectByType<MapEngine>();
 	}
-	
+
 	void FixedUpdate () {/*
 		//move only when player is in the room
 		if (mapEngine.ActiveRoom() == transform.parent.gameObject.name) {
-			if (Input.GetButtonUp ("Action")) { //toggle can move by action button E
+			if (GameplayInput.ActionReleasedThisFrame) { //toggle can move by action button E
 				if (canMove) canMove = false;
 				else canMove = true;
 			}
-			if (Input.GetButtonUp ("Tether")) { //toggle tether by tether button T
+			if (GameplayInput.TetherReleasedThisFrame) { //toggle tether by tether button T
 				if (tether) tether = false;
 				else tether = true;
 			}
-			
-			if (tether) {			
+
+			if (tether) {
 				//restrict movement if player and clone too far apart
 				float dist = Vector2.Distance(player.transform.position, transform.position);
 				print(dist);
@@ -55,15 +47,16 @@ public class Clone4Script : MonoBehaviour {
 			player.SetPlayerControl(false);
 			cam.SetClone(clone);
 			Vector2 temp = clone.transform.position;
-			float x = Input.GetAxis("Horizontal");
-			float y = Input.GetAxis("Vertical");
+			Vector2 movement = GameplayInput.Movement;
+			float x = movement.x;
+			float y = movement.y;
 			if (!tetherStop) {
 				temp.x += x * speed * (Time.deltaTime * 4);
 				temp.y += y * speed * (Time.deltaTime * 4);
 			} else {
 				temp.x -= x * speed * (Time.deltaTime * 4);
 				temp.y -= y * speed * (Time.deltaTime * 4);
-			}					
+			}
 			clone.transform.position = temp;
 		} else {
 			player.SetPlayerControl(true);

@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
+using UnityEngine;
+    /// <summary>Checks the colored switch combination and reports puzzle completion.</summary>
 
 public class RGBSwitchSolver : MonoBehaviour {
 	private RedSwitchScript switchR;
@@ -19,9 +19,9 @@ public class RGBSwitchSolver : MonoBehaviour {
 	void Update () {
 		if (!chest.unlocked )
 		{
-			if (switchB.triggered && switchR.triggered && switchB.triggered) {
+			if (switchR.triggered && switchG.triggered && switchB.triggered) {
 				chest.unlocked = true;
-				FindObjectOfType<Overlay>().ChestOpenText();
+				FindAnyObjectByType<Overlay>().ChestOpenText();
 			}
 		}
 	

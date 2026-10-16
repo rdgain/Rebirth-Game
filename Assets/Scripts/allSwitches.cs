@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
+using UnityEngine;
+    /// <summary>Collects and coordinates the Switch components beneath this object.</summary>
 
 public class allSwitches : MonoBehaviour
 {
@@ -24,7 +24,7 @@ public class allSwitches : MonoBehaviour
 				}
 			}
 
-			FindObjectOfType<Overlay>().ChestOpenText();
+			FindAnyObjectByType<Overlay>().ChestOpenText();
 			chest.unlocked = true;
 		}
 	}

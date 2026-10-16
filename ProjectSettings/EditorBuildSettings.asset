@@ -5,9 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/Olivier.unity
   - enabled: 1
-    path: Assets/Resources/Rebirth1.unity
+    path: Assets/Scenes/Rebirth1.unity
   - enabled: 1
-    path: Assets/Resources/Rebirth2.unity
+    path: Assets/Scenes/Rebirth2.unity

@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
+using UnityEngine;
+    /// <summary>Controls the room darkness effect in response to game state.</summary>
 
 public class DarknessScript : MonoBehaviour {
 

@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
+using UnityEngine;
+    /// <summary>Tracks whether this reward has been collected.</summary>
 
 public class Reward : MonoBehaviour
 {

@@ -1,6 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
-using UnityEngine.Networking;
+using UnityEngine;
+    /// <summary>Controls the sister character and her interaction trigger.</summary>
 
 public class Sister : MonoBehaviour
 {
@@ -10,14 +9,14 @@ public class Sister : MonoBehaviour
     // Use this for initialization
     void Awake()
     {
-		temple = FindObjectOfType<Temple>();	
+		temple = FindAnyObjectByType<Temple>();
     }
 
     // Update is called once per frame
     void Update()
     {
     }
-	
+
 	void OnTriggerStay2D (Collider2D other) {
 		if (other.name == "Player")
 			temple.LevelFinished();

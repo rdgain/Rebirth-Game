@@ -1,8 +1,6 @@
-﻿using System;
 using UnityEngine;
-using System.Collections;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
+    /// <summary>Animates and activates the stopwatch room-restart control.</summary>
 
 public class StopWatch : MonoBehaviour
 {
@@ -34,7 +32,7 @@ public class StopWatch : MonoBehaviour
         {
             audio.Play();
         }
-        FindObjectOfType<MapEngine>().ReloadRoom();
+        FindAnyObjectByType<MapEngine>().ReloadRoom();
     }
 
     void Update() {

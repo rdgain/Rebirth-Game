@@ -1,9 +1,9 @@
-﻿using UnityEngine;
-using System.Collections;
+using UnityEngine;
+    /// <summary>Tracks when a player or clone presses or leaves the switch.</summary>
 
 public class Switch : MonoBehaviour {
 
-	public string name;
+	public string switchName;
 	public bool triggered;
 	public Sprite norm;
 	public Sprite pressed;
@@ -13,7 +13,7 @@ public class Switch : MonoBehaviour {
 		triggered = false;
 		spriteRend = this.GetComponent<SpriteRenderer> ();
 		spriteRend.sprite = norm;
-		name = gameObject.name;
+		switchName = gameObject.name;
 	}
 
 	void OnTriggerExit2D(Collider2D other) {

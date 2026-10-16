@@ -40,4 +40,4 @@ z 9 2 sink
 lightPath : source, mirror1, mirror2, mirror3, mirror4, sink
 - Comments
 win condition: mirros in right position, switch pressed => chest opens, get reward
-can switch control to clone / clone mimics player movements
+can switch direct control to the clone; the clone moves using player input

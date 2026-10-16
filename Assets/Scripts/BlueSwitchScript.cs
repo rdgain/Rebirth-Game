@@ -1,9 +1,8 @@
-﻿using UnityEngine;
-using System.Collections;
+using UnityEngine;
+    /// <summary>Handles activation and deactivation of the blue switch.</summary>
 
 public class BlueSwitchScript : MonoBehaviour {
 
-	public string name;
 	public bool triggered;
 	public Sprite norm;
 	public Sprite pressed;
@@ -15,7 +14,6 @@ public class BlueSwitchScript : MonoBehaviour {
 	void Start () {
 		spriteRend = this.GetComponent<SpriteRenderer> ();
 		deactivate();
-		name = gameObject.name;
 		switchG = GameObject.Find("switchG").GetComponent<GreenSwitchScript> ();
 		switchR = GameObject.Find("switchR").GetComponent<RedSwitchScript> ();
 		trapSwitch = GameObject.Find("trap1").GetComponent<TrapSwitchT2Script> ();
@@ -23,9 +21,17 @@ public class BlueSwitchScript : MonoBehaviour {
 
 	void OnTriggerStay2D(Collider2D other) {
 		if (!triggered) {
-			activate();
-			if (switchR.triggered && !switchG.triggered) switchR.deactivate();
+			if (switchR.triggered && switchG.triggered)
+				activate();
+			else
+				ResetSequence();
 		}
+	}
+
+	private void ResetSequence() {
+		switchR.deactivate();
+		switchG.deactivate();
+		deactivate();
 	}
 	
 	public void activate() {		

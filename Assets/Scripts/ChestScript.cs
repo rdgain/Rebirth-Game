@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
+using UnityEngine;
+    /// <summary>Handles player interaction with a chest and starts its puzzle or reward flow.</summary>
 
 public class ChestScript : MonoBehaviour {
 
@@ -14,7 +14,7 @@ public class ChestScript : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
 	{
-	    altar = FindObjectOfType<Altar1>();
+	    altar = FindAnyObjectByType<Altar1>();
 		//capacity = 1;
 		//stuff = new GameObject[capacity];
 		//for (int i = 0; i<capacity; i++) {
@@ -24,7 +24,7 @@ public class ChestScript : MonoBehaviour {
 	
 	void OnTriggerStay2D(Collider2D other) {
 		if (other.gameObject.tag == "Player") {
-			if (Input.GetButtonUp ("Action")) {
+			if (GameplayInput.ActionReleasedThisFrame) {
 
 				//if (!unlocked && te.getReward[te.playerRoom()]) {
 

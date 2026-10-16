@@ -1,6 +1,6 @@
-﻿using UnityEngine;
-using System.Collections;
+using UnityEngine;
 using UnityEngine.SceneManagement;
+    /// <summary>Coordinates level flow, timer state, dialog, restart, and scene transitions.</summary>
 
 public class Temple : MonoBehaviour
 {
@@ -18,15 +18,13 @@ public class Temple : MonoBehaviour
 
 	void Awake()
 	{
-		player = FindObjectOfType<Player>();
+		player = FindAnyObjectByType<Player>();
         player.SetPlayerControl(false);
-        overlay = FindObjectOfType<Overlay>();
+        overlay = FindAnyObjectByType<Overlay>();
 	}
 
     void Start()
     {
-        Debug.Log("Restart");
-
         Init();
         Intro();
     }
@@ -88,14 +86,12 @@ public class Temple : MonoBehaviour
 
 	public void Intro()
 	{
-		Debug.Log ("Intro");
 		overlay.Introduction();
 		state = 1;
 	}
 
 	public void MainGame()
 	{
-		Debug.Log("Start");
 		state = 2;
 		overlay.MainGame();
         player.SetPlayerControl(true);
@@ -114,6 +110,11 @@ public class Temple : MonoBehaviour
     {
         if (state < 3)
         {
+            if (elapsing)
+            {
+                StopTime();
+            }
+
             state = 3;
             player.SetPlayerControl(false);
             Debug.Log("Finished Level " + CurrentLevel);
@@ -126,12 +127,14 @@ public class Temple : MonoBehaviour
         
     }
 
-    public void LoadLevel(int level)
+	/// <summary>Loads the numbered Rebirth scene.</summary>
+	public void LoadLevel(int level)
     {
 		//Application.LoadLevel("Rebirth"+level);
         SceneManager.LoadScene("Rebirth"+level);
     }
 
+    /// <summary>Loads the scene after the current level.</summary>
     public void LoadNextLevel()
     {
         LoadLevel(CurrentLevel+1);
@@ -147,16 +150,10 @@ public class Temple : MonoBehaviour
 		Application.Quit();
 	}
 
+	/// <summary>Restarts the current level scene.</summary>
 	public void Restart()
 	{
-	    if (state < 3)
-	    {
-	        LoadLevel(CurrentLevel);
-	    }
-	    else
-	    {
-            LoadLevel(1);
-        }
+	    LoadLevel(CurrentLevel);
 	}
 
 	public void Pause()

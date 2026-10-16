@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
+using UnityEngine;
+    /// <summary>Applies the rightward sliding effect while an object occupies this tile.</summary>
 
 public class SlideRightScript : MonoBehaviour {
 	private Player player;
@@ -16,7 +16,7 @@ public class SlideRightScript : MonoBehaviour {
 	
 	void OnTriggerExit2D(Collider2D other) {
 		if (other.gameObject.tag == "Player") {
-            player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            player.GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
         }
 	}
 	

@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
+using UnityEngine;
+    /// <summary>Places the player at the room spawn position during initialization.</summary>
 
 public class Spawn : MonoBehaviour {
 
@@ -8,7 +8,7 @@ public class Spawn : MonoBehaviour {
 	{
 	    transform.position = new Vector3(transform.position.x, transform.position.y, -1.0f);
 
-	    Player player = FindObjectOfType<Player>();
+	    Player player = FindAnyObjectByType<Player>();
 
 	    if (player.PositionInitialized())
 	    {

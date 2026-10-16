@@ -1,17 +1,15 @@
-﻿using UnityEngine;
-using System.Collections;
+using UnityEngine;
+    /// <summary>Handles collisions with the pit and applies the associated game effect.</summary>
 
 public class PitScript : MonoBehaviour
 {
-	public string name;
     private MapEngine mapEngine;
 	AudioSource audio;
 
     void Awake()
     {
-        mapEngine = FindObjectOfType<MapEngine>();
+        mapEngine = FindAnyObjectByType<MapEngine>();
 		audio = this.GetComponent<AudioSource> ();
-		name = gameObject.name;
     }
 
 	void OnTriggerStay2D(Collider2D other) {
@@ -19,11 +17,11 @@ public class PitScript : MonoBehaviour
 			audio.Play();
 		if (other.gameObject.tag == "Player")
 		{
-            Vector3 vec3 = transform.parent.parent.FindChild(mapEngine.ActiveRoom()).FindChild("PitSpawn").position;
+            Vector3 vec3 = transform.parent.parent.Find(mapEngine.ActiveRoom()).Find("PitSpawn").position;
             other.transform.position = new Vector3(vec3.x, vec3.y, -1.0f);
         }
 		else if (other.gameObject.name == "Clone") {
-			Vector3 vec3 = transform.parent.parent.FindChild(mapEngine.ActiveRoom()).FindChild("PitSpawnClone").position;
+			Vector3 vec3 = transform.parent.parent.Find(mapEngine.ActiveRoom()).Find("PitSpawnClone").position;
             other.transform.position = new Vector3(vec3.x, vec3.y, -1.0f);		
 		}
 		else if (other.gameObject.name.StartsWith("move"))

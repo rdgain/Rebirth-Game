@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
+using UnityEngine;
+    /// <summary>Moves clone three using its steering behavior.</summary>
 
 public class Clone3Script : MonoBehaviour {
 	//private Animator anim_controller;
@@ -9,7 +9,7 @@ public class Clone3Script : MonoBehaviour {
 	
     private MapEngine mapEngine;
 	private Temple temple;
-	private bool canMove, seenPlayer;
+	private bool seenPlayer;
 	private Vector2 temp;
 	private float radius1, radius2;
 	private int counter, maxCount;
@@ -20,17 +20,16 @@ public class Clone3Script : MonoBehaviour {
 	private GameObject clone;
 
 	void Start () {
-		mapEngine = FindObjectOfType<MapEngine>();
-		temple = FindObjectOfType<Temple>();
+		mapEngine = FindAnyObjectByType<MapEngine>();
+		temple = FindAnyObjectByType<Temple>();
 		clone = GameObject.Find("Clone");
 		player = GameObject.Find("Player");
-		canMove = false;
 		seenPlayer = false;
 		radius1 = 100;
 		radius2 = 30;
 		maxCount = 30;
 		counter = maxCount;
-		currentVelocity = clone.transform.GetComponent<Rigidbody2D>().velocity;
+		currentVelocity = clone.transform.GetComponent<Rigidbody2D>().linearVelocity;
 	}
 	
 	void FixedUpdate ()
@@ -50,7 +49,7 @@ public class Clone3Script : MonoBehaviour {
 	            if (counter == maxCount)
 	            {
 	                counter = 0;
-	                clone.transform.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+	                clone.transform.GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
 	                Vector2 init = Vector2.zero;
 
 	                // get point on first big circle

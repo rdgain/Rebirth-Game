@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
+using UnityEngine;
+    /// <summary>Removes light particles that collide with puzzle objects.</summary>
 
 public class LightCollision : MonoBehaviour {
 
@@ -26,7 +26,7 @@ public class LightCollision : MonoBehaviour {
 			if((other.GetComponentInParent<LightCheck>() == null || other.transform.parent.tag == "LightSink" || other.tag == "LightSink") &&
 			   		Vector2.Distance(bounds.ClosestPoint(pos), pos) <= 0.1f)
 			{ // if partical is within other's collider.
-				particals[i].lifetime = 0;
+				particals[i].remainingLifetime = 0;
 			}
 		}
 		ps.SetParticles (particals, count);

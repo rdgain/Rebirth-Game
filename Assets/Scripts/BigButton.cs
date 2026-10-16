@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
+using UnityEngine;
+    /// <summary>Responds to a completed trigger condition and advances the game state.</summary>
 
 public class BigButton : MonoBehaviour {
 
@@ -7,7 +7,7 @@ public class BigButton : MonoBehaviour {
 
 	void Awake ()
 	{
-	    temple = FindObjectOfType<Temple>();
+	    temple = FindAnyObjectByType<Temple>();
 	}
 
 
@@ -15,7 +15,7 @@ public class BigButton : MonoBehaviour {
     {
 		if (other.name.Equals("Player"))
 		{
-		    Reward[] rewards = FindObjectsOfType<Reward>();
+		    Reward[] rewards = FindObjectsByType<Reward>();
 		    if (rewards[0].Gathered() && rewards[1].Gathered() && rewards[2].Gathered() && rewards[3].Gathered())
 		    {
                 temple.LevelFinished();

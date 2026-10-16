@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
+using UnityEngine;
+    /// <summary>Implements the room-win rule.</summary>
 
 public class Rule_Win : Rule {
 	public override bool isThisRule (string key)

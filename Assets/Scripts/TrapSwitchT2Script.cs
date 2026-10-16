@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
+using UnityEngine;
+    /// <summary>Updates the Temple 2 trap state from its switch trigger.</summary>
 
 public class TrapSwitchT2Script : MonoBehaviour {
 

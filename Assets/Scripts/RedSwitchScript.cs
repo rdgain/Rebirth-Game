@@ -1,9 +1,8 @@
-﻿using UnityEngine;
-using System.Collections;
+using UnityEngine;
+    /// <summary>Handles activation and deactivation of the red switch.</summary>
 
 public class RedSwitchScript : MonoBehaviour {
 
-	public string name;
 	public bool triggered;
 	public Sprite norm;
 	public Sprite pressed;
@@ -15,7 +14,6 @@ public class RedSwitchScript : MonoBehaviour {
 	void Start () {
 		spriteRend = this.GetComponent<SpriteRenderer> ();
 		deactivate();
-		name = gameObject.name;
 		switchG = GameObject.Find("switchG").GetComponent<GreenSwitchScript> ();
 		switchB = GameObject.Find("switchB").GetComponent<BlueSwitchScript> ();
 		trapSwitch = GameObject.Find("trap1").GetComponent<TrapSwitchT2Script> ();
@@ -23,10 +21,17 @@ public class RedSwitchScript : MonoBehaviour {
 
 	void OnTriggerStay2D(Collider2D other) {
 		if (!triggered) {
-			activate();
-			if (switchB.triggered) switchB.deactivate();
-			if (switchG.triggered) switchG.deactivate();
+			if (!switchG.triggered && !switchB.triggered)
+				activate();
+			else
+				ResetSequence();
 		}
+	}
+
+	private void ResetSequence() {
+		deactivate();
+		switchG.deactivate();
+		switchB.deactivate();
 	}
 	
 	public void activate() {		

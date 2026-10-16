@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8947bbe653799624cb1c564e06172648, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: 
+  switchName: 
   triggered: 0
   norm: {fileID: 21300000, guid: 3e3a3f47a57a7904ab0677bd9f0d5b46, type: 3}
   pressed: {fileID: 21300000, guid: fe69879aecde8424fae78e65a6d2229c, type: 3}

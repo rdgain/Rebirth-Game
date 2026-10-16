@@ -130,7 +130,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8a1ec908c0f1b2459553d02523c9bda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: 
   bridge: {fileID: 168140, guid: e332241edc1a53d43bc1da224ff2e62b, type: 2}
 --- !u!212 &21222546
 SpriteRenderer:

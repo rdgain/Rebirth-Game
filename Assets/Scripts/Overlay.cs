@@ -1,8 +1,9 @@
-﻿using System;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
+    /// <summary>Controls menus, dialog, pause state, and other on-screen game messages.</summary>
 
 public class Overlay : MonoBehaviour
 {

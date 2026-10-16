@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
+using UnityEngine;
+    /// <summary>Checks the temple room objectives and advances when they are complete.</summary>
 
 public class TempleSolver : MonoBehaviour {
 
@@ -17,14 +17,14 @@ public class TempleSolver : MonoBehaviour {
 	void Update () {
 	    if (!triggered)
 	    {
-	        ChestScript[] rewards = FindObjectsOfType<ChestScript>();
+	        ChestScript[] rewards = FindObjectsByType<ChestScript>();
 	        if (rewards[0].openned && rewards[1].openned && rewards[2].openned && rewards[3].openned)
 	        {
                 Debug.Log("Temple 2 Solved");
 	            triggered = true;
 	            //destroy clone, create sister
 	            Destroy(clone);
-	            Vector3 vec3 = transform.parent.FindChild("PitSpawnClone").position;
+	            Vector3 vec3 = transform.parent.Find("PitSpawnClone").position;
 	            GameObject s = (GameObject) Instantiate(sister, new Vector3(vec3.x, vec3.y, -1.0f), transform.rotation);
 	            s.transform.parent = gameObject.transform;
 	        }

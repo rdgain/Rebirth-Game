@@ -1,8 +1,6 @@
-﻿using System;
 using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
+    /// <summary>Applies room rules and unlocks the chest when the light puzzle is solved.</summary>
 
 public class mirrorSolver : MonoBehaviour {
 	public GameObject lightSink = null;
@@ -15,7 +13,7 @@ public class mirrorSolver : MonoBehaviour {
 		lightSink = transform.parent.transform.Find ("lightSink").gameObject;
 
         // apply rules to the room.
-        RuleParser.implement(transform.parent.gameObject, FindObjectOfType<MapEngine>().RoomRules(transform.parent.name));
+        RuleParser.implement(transform.parent.gameObject, FindAnyObjectByType<MapEngine>().RoomRules(transform.parent.name));
     }
 
     void Update()
@@ -24,7 +22,7 @@ public class mirrorSolver : MonoBehaviour {
 			if (lightSink != null && lightSink.GetComponent<LightCheck> ().inToleranceFromSource ()) {
 				chest.unlocked = true;
 
-				FindObjectOfType<Overlay>().ChestOpenText();
+				FindAnyObjectByType<Overlay>().ChestOpenText();
 			}
 		}
 	}

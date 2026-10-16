@@ -71,5 +71,5 @@ hint: tiles with hint on them (R -> G -> B). player cannot interact with them, w
 trap creates pits all around the tile
 win unlocks chest
 clone has specific path: 2right, 1down, 6right, 2up, 3right, 2down, 1right, 1down, 2right, 7up, 11left, 1down, 3left, 4down, repeat
-clone carries lantern, vision restricted to 5x5 area around clone
+clone lantern uses a 25-unit range and 25-degree spot angle
 cannot control clone

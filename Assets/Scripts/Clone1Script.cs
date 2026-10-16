@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
+using UnityEngine;
+    /// <summary>Applies direct movement input to clone one.</summary>
 
 public class Clone1Script : MonoBehaviour {
     private MapEngine mapEngine;
@@ -11,14 +11,14 @@ public class Clone1Script : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		clone = transform.parent.Find("Clone").gameObject;
-		mapEngine = FindObjectOfType<MapEngine>();
+		mapEngine = FindAnyObjectByType<MapEngine>();
 		canMove = false;
 	}
 	
 	void FixedUpdate () {
 		//move only when player is in the room
 		if (mapEngine.ActiveRoom() == transform.parent.gameObject.name) {
-			if (Input.GetButtonUp ("Action")) { //toggle can move by action button
+			if (GameplayInput.ActionReleasedThisFrame) { //toggle can move by action button
 				if (canMove) canMove = false;
 				else {
 					canMove = true;
@@ -31,8 +31,9 @@ public class Clone1Script : MonoBehaviour {
         }
 		if (canMove) {
 			Vector2 temp = clone.transform.position;
-			float x = Input.GetAxis("Horizontal");
-			float y = Input.GetAxis("Vertical");
+			Vector2 movement = GameplayInput.Movement;
+			float x = movement.x;
+			float y = movement.y;
 			temp.x += x * speed * (Time.deltaTime * 4);
 			temp.y += y * speed * (Time.deltaTime * 4);		
 			clone.transform.position = temp;

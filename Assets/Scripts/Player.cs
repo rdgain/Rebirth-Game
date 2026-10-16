@@ -1,6 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
-using UnityEngine.Networking;
+using UnityEngine;
+    /// <summary>Implements main-player movement, animation, and control locking.</summary>
 
 public class Player : MonoBehaviour
 {
@@ -28,32 +27,33 @@ public class Player : MonoBehaviour
     {
 
         Vector3 temp = transform.position;
+        Vector2 movement = GameplayInput.Movement;
 
         if (playerControl && canMove)
         {
-            temp.x += (speed * Input.GetAxis("Horizontal"));
-            temp.y += (speed * Input.GetAxis("Vertical"));
+            temp.x += speed * movement.x;
+            temp.y += speed * movement.y;
 			transform.position = temp;
 						
-			if (Input.GetAxis("Horizontal") > 0) {
+			if (movement.x > 0) {
 				anim_controller.SetBool("right", true);
 				anim_controller.SetBool("left", false);
 				anim_controller.SetBool("up", false);
 				anim_controller.SetBool("down", false);
 			}
-            else if (Input.GetAxis("Horizontal") < 0) {
+            else if (movement.x < 0) {
 				anim_controller.SetBool("right", false);
 				anim_controller.SetBool("left", true);
 				anim_controller.SetBool("up", false);
 				anim_controller.SetBool("down", false);
 			}
-            else if (Input.GetAxis("Vertical") > 0) {
+            else if (movement.y > 0) {
 				anim_controller.SetBool("right", false);
 				anim_controller.SetBool("left", false);
 				anim_controller.SetBool("up", true);
 				anim_controller.SetBool("down", false);
 			}
-            else if (Input.GetAxis("Vertical") < 0) {
+            else if (movement.y < 0) {
 				anim_controller.SetBool("right", false);
 				anim_controller.SetBool("left", false);
 				anim_controller.SetBool("up", false);
@@ -67,16 +67,19 @@ public class Player : MonoBehaviour
         }		
 	}
 
+    /// <summary>Enables or disables keyboard movement for the player.</summary>
     public void SetPlayerControl(bool toggle)
     {
         playerControl = toggle;
     }
 	
+	/// <summary>Reports whether keyboard movement is currently enabled.</summary>
 	public bool GetPlayerControl()
     {
         return playerControl;
     }
 
+    /// <summary>Reports whether the player's spawn position has been assigned.</summary>
     public bool PositionInitialized()
     {
         if (posInit)
@@ -90,11 +93,13 @@ public class Player : MonoBehaviour
         }
     }
 	
+	/// <summary>Moves the player to a world-space position.</summary>
 	public void SetPosition(Vector3 position)
     {
         transform.position = position;
     }
 
+	/// <summary>Returns the player's current world-space position.</summary>
 	public Vector3 GetPosition()
 	{
 		return transform.position;

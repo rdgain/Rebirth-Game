@@ -1,9 +1,8 @@
-﻿using UnityEngine;
-using System.Collections;
+using UnityEngine;
+    /// <summary>Handles activation and deactivation of the green switch.</summary>
 
 public class GreenSwitchScript : MonoBehaviour {
 
-	public string name;
 	public bool triggered;
 	public Sprite norm;
 	public Sprite pressed;
@@ -15,7 +14,6 @@ public class GreenSwitchScript : MonoBehaviour {
 	void Start () {
 		spriteRend = this.GetComponent<SpriteRenderer> ();
 		deactivate();
-		name = gameObject.name;
 		switchR	= GameObject.Find("switchR").GetComponent<RedSwitchScript> ();
 		switchB = GameObject.Find("switchB").GetComponent<BlueSwitchScript> ();
 		trapSwitch = GameObject.Find("trap1").GetComponent<TrapSwitchT2Script> ();
@@ -24,11 +22,18 @@ public class GreenSwitchScript : MonoBehaviour {
 	void OnTriggerStay2D(Collider2D other) {
 		if (!other.name.Equals ("Clone")) {
 			if (!triggered) {
-				activate ();
-				if (switchB.triggered)
-					switchB.deactivate ();
+				if (switchR.triggered && !switchB.triggered)
+					activate();
+				else
+					ResetSequence();
 			}
 		}
+	}
+
+	private void ResetSequence() {
+		switchR.deactivate();
+		deactivate();
+		switchB.deactivate();
 	}
 	
 	public void activate() {		

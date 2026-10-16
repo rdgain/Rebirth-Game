@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
+using UnityEngine;
+    /// <summary>Triggers the pit trap when a player or clone enters its area.</summary>
 
 public class pitTrapScript : MonoBehaviour {
 
