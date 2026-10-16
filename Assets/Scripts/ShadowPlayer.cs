@@ -24,7 +24,7 @@ public class ShadowPlayer : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (FindObjectOfType<MapEngine>().ActiveRoom() == transform.parent.gameObject.name)
+        if (FindAnyObjectByType<MapEngine>().ActiveRoom() == transform.parent.gameObject.name)
         {
             if ( frozen )
             {

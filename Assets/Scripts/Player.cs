@@ -27,32 +27,33 @@ public class Player : MonoBehaviour
     {
 
         Vector3 temp = transform.position;
+        Vector2 movement = GameplayInput.Movement;
 
         if (playerControl && canMove)
         {
-            temp.x += (speed * Input.GetAxis("Horizontal"));
-            temp.y += (speed * Input.GetAxis("Vertical"));
+            temp.x += speed * movement.x;
+            temp.y += speed * movement.y;
 			transform.position = temp;
 						
-			if (Input.GetAxis("Horizontal") > 0) {
+			if (movement.x > 0) {
 				anim_controller.SetBool("right", true);
 				anim_controller.SetBool("left", false);
 				anim_controller.SetBool("up", false);
 				anim_controller.SetBool("down", false);
 			}
-            else if (Input.GetAxis("Horizontal") < 0) {
+            else if (movement.x < 0) {
 				anim_controller.SetBool("right", false);
 				anim_controller.SetBool("left", true);
 				anim_controller.SetBool("up", false);
 				anim_controller.SetBool("down", false);
 			}
-            else if (Input.GetAxis("Vertical") > 0) {
+            else if (movement.y > 0) {
 				anim_controller.SetBool("right", false);
 				anim_controller.SetBool("left", false);
 				anim_controller.SetBool("up", true);
 				anim_controller.SetBool("down", false);
 			}
-            else if (Input.GetAxis("Vertical") < 0) {
+            else if (movement.y < 0) {
 				anim_controller.SetBool("right", false);
 				anim_controller.SetBool("left", false);
 				anim_controller.SetBool("up", false);

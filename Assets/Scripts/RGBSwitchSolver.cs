@@ -21,7 +21,7 @@ public class RGBSwitchSolver : MonoBehaviour {
 		{
 			if (switchB.triggered && switchR.triggered && switchB.triggered) {
 				chest.unlocked = true;
-				FindObjectOfType<Overlay>().ChestOpenText();
+				FindAnyObjectByType<Overlay>().ChestOpenText();
 			}
 		}
 	

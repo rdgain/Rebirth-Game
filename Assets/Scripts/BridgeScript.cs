@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class BridgeScript : MonoBehaviour
 {
-	public string name;
     private MapEngine mapEngine;
 	AudioSource audio;
 	public GameObject bridge;
@@ -11,9 +10,8 @@ public class BridgeScript : MonoBehaviour
 
     void Awake()
     {
-        mapEngine = FindObjectOfType<MapEngine>();
+        mapEngine = FindAnyObjectByType<MapEngine>();
 		audio = this.GetComponent<AudioSource> ();
-		name = gameObject.name;
 		activated = false;
 		deactivated = false;
     }

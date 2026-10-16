@@ -27,7 +27,7 @@ public class SlideDownScript : MonoBehaviour {
 	}
 	
 	public Vector2 GetForce(Vector2 f) {
-		switch (FindObjectOfType<MapEngine>().RoomOrientation(transform.parent.name))
+		switch (FindAnyObjectByType<MapEngine>().RoomOrientation(transform.parent.name))
         {
             case 1:
                 return new Vector2(f.y, f.x);

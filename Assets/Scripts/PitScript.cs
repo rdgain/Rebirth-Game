@@ -3,15 +3,13 @@ using UnityEngine;
 
 public class PitScript : MonoBehaviour
 {
-	public string name;
     private MapEngine mapEngine;
 	AudioSource audio;
 
     void Awake()
     {
-        mapEngine = FindObjectOfType<MapEngine>();
+        mapEngine = FindAnyObjectByType<MapEngine>();
 		audio = this.GetComponent<AudioSource> ();
-		name = gameObject.name;
     }
 
 	void OnTriggerStay2D(Collider2D other) {

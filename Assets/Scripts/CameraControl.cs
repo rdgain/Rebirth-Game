@@ -7,7 +7,7 @@ public class CameraControl : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		player = FindObjectOfType<Player>();
+		player = FindAnyObjectByType<Player>();
 		clone = null;
 	}
 	

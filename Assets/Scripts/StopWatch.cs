@@ -32,7 +32,7 @@ public class StopWatch : MonoBehaviour
         {
             audio.Play();
         }
-        FindObjectOfType<MapEngine>().ReloadRoom();
+        FindAnyObjectByType<MapEngine>().ReloadRoom();
     }
 
     void Update() {

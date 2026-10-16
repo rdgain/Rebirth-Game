@@ -17,7 +17,7 @@ public class TempleSolver : MonoBehaviour {
 	void Update () {
 	    if (!triggered)
 	    {
-	        ChestScript[] rewards = FindObjectsOfType<ChestScript>();
+	        ChestScript[] rewards = FindObjectsByType<ChestScript>();
 	        if (rewards[0].openned && rewards[1].openned && rewards[2].openned && rewards[3].openned)
 	        {
                 Debug.Log("Temple 2 Solved");

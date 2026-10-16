@@ -24,7 +24,7 @@ public class CloneBumper : MonoBehaviour
                 break;
         }
 
-        switch (FindObjectOfType<MapEngine>().RoomOrientation(transform.parent.name))
+        switch (FindAnyObjectByType<MapEngine>().RoomOrientation(transform.parent.name))
         {
             case 0:
                 break;

@@ -9,14 +9,14 @@ public class Sister : MonoBehaviour
     // Use this for initialization
     void Awake()
     {
-		temple = FindObjectOfType<Temple>();	
+		temple = FindAnyObjectByType<Temple>();
     }
 
     // Update is called once per frame
     void Update()
     {
     }
-	
+
 	void OnTriggerStay2D (Collider2D other) {
 		if (other.name == "Player")
 			temple.LevelFinished();

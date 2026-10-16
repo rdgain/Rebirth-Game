@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class RedSwitchScript : MonoBehaviour {
 
-	public string name;
 	public bool triggered;
 	public Sprite norm;
 	public Sprite pressed;
@@ -15,7 +14,6 @@ public class RedSwitchScript : MonoBehaviour {
 	void Start () {
 		spriteRend = this.GetComponent<SpriteRenderer> ();
 		deactivate();
-		name = gameObject.name;
 		switchG = GameObject.Find("switchG").GetComponent<GreenSwitchScript> ();
 		switchB = GameObject.Find("switchB").GetComponent<BlueSwitchScript> ();
 		trapSwitch = GameObject.Find("trap1").GetComponent<TrapSwitchT2Script> ();

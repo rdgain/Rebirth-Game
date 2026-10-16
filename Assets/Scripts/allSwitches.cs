@@ -24,7 +24,7 @@ public class allSwitches : MonoBehaviour
 				}
 			}
 
-			FindObjectOfType<Overlay>().ChestOpenText();
+			FindAnyObjectByType<Overlay>().ChestOpenText();
 			chest.unlocked = true;
 		}
 	}

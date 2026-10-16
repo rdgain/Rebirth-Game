@@ -11,7 +11,7 @@ public class MirrorSolver2 : MonoBehaviour {
 		lightSink = transform.parent.transform.Find ("sink").gameObject;
 		
 		// apply rules to the room.
-        RuleParser.implement(transform.parent.gameObject, FindObjectOfType<MapEngine>().RoomRules(transform.parent.name));
+        RuleParser.implement(transform.parent.gameObject, FindAnyObjectByType<MapEngine>().RoomRules(transform.parent.name));
 	}
 	
 	void Update () {
@@ -43,7 +43,7 @@ public class MirrorSolver2 : MonoBehaviour {
             //workaround end
 
             chest.unlocked = true;
-			FindObjectOfType<Overlay>().ChestOpenText();
+			FindAnyObjectByType<Overlay>().ChestOpenText();
 		}
 	}
 }

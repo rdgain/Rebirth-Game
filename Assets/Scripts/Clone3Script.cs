@@ -9,7 +9,7 @@ public class Clone3Script : MonoBehaviour {
 	
     private MapEngine mapEngine;
 	private Temple temple;
-	private bool canMove, seenPlayer;
+	private bool seenPlayer;
 	private Vector2 temp;
 	private float radius1, radius2;
 	private int counter, maxCount;
@@ -20,11 +20,10 @@ public class Clone3Script : MonoBehaviour {
 	private GameObject clone;
 
 	void Start () {
-		mapEngine = FindObjectOfType<MapEngine>();
-		temple = FindObjectOfType<Temple>();
+		mapEngine = FindAnyObjectByType<MapEngine>();
+		temple = FindAnyObjectByType<Temple>();
 		clone = GameObject.Find("Clone");
 		player = GameObject.Find("Player");
-		canMove = false;
 		seenPlayer = false;
 		radius1 = 100;
 		radius2 = 30;

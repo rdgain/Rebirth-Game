@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PermaSwitch : MonoBehaviour {
 
-	public string name;
+	public string switchName;
 	public bool triggered;
 	public Sprite norm;
 	public Sprite pressed;
@@ -13,7 +13,7 @@ public class PermaSwitch : MonoBehaviour {
 		triggered = false;
 		spriteRend = this.GetComponent<SpriteRenderer> ();
 		spriteRend.sprite = norm;
-		name = gameObject.name;
+		switchName = gameObject.name;
 	}
 
 	void OnTriggerStay2D(Collider2D other) {

@@ -6,13 +6,13 @@ public class MovingBlock : MonoBehaviour {
 
 	void OnTriggerStay2D(Collider2D other) {
 		if (other.gameObject.tag == "Player") {
-			if (Input.GetButtonUp ("Action")) {
+			if (GameplayInput.ActionReleasedThisFrame) {
 
 				double x = getDirection(other.gameObject);
 				int modifier;
 
 				if (x == 2) {
-					if (Input.GetAxis ("Horizontal") > 0)
+					if (GameplayInput.Movement.x > 0)
 						modifier = 1;
 					else
 						modifier = -1;
@@ -23,7 +23,7 @@ public class MovingBlock : MonoBehaviour {
 					}
 				} 
 				else if (x == 1) {
-					if (Input.GetAxis ("Vertical") > 0)
+					if (GameplayInput.Movement.y > 0)
 						modifier = 1;
 					else
 						modifier = -1;

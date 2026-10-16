@@ -22,7 +22,7 @@ public class BridgeFunc : MonoBehaviour {
 		foreach (var s in permaSwitches){
             if (s.tag == "Switch" && s.triggered) {
 				BridgeScript bs;
-				switch (s.name) {
+				switch (s.switchName) {
 					case "switchPerma1":
 						bs = GameObject.Find ("bridge5").GetComponent<BridgeScript> ();
 						bs.activate ();
@@ -40,7 +40,7 @@ public class BridgeFunc : MonoBehaviour {
 			if (s.tag == "Switch")
 				if (s.triggered) {
 					BridgeScript bs;
-					switch (s.name) {
+				switch (s.switchName) {
 						case "switch1":
 							bs = GameObject.Find ("bridge3").GetComponent<BridgeScript> ();
 							bs.activate ();
@@ -83,7 +83,7 @@ public class BridgeFunc : MonoBehaviour {
 					}
 				} else {
 					BridgeScript bs;
-					switch (s.name) {
+					switch (s.switchName) {
 						case "switch1":
 							if (bridge3 == 1) {
 								bs = GameObject.Find ("bridge3").GetComponent<BridgeScript> ();

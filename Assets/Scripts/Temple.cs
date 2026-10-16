@@ -18,15 +18,13 @@ public class Temple : MonoBehaviour
 
 	void Awake()
 	{
-		player = FindObjectOfType<Player>();
+		player = FindAnyObjectByType<Player>();
         player.SetPlayerControl(false);
-        overlay = FindObjectOfType<Overlay>();
+        overlay = FindAnyObjectByType<Overlay>();
 	}
 
     void Start()
     {
-        Debug.Log("Restart");
-
         Init();
         Intro();
     }
@@ -88,14 +86,12 @@ public class Temple : MonoBehaviour
 
 	public void Intro()
 	{
-		Debug.Log ("Intro");
 		overlay.Introduction();
 		state = 1;
 	}
 
 	public void MainGame()
 	{
-		Debug.Log("Start");
 		state = 2;
 		overlay.MainGame();
         player.SetPlayerControl(true);
