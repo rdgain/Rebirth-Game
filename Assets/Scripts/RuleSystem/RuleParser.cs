@@ -1,8 +1,8 @@
-﻿using UnityEngine;
-using System.Collections;
+using UnityEngine;
 using System.Collections.Generic;
 using System.Reflection;
 using System;
+    /// <summary>Parses room rule text and dispatches each rule to a registered handler.</summary>
 
 public static class RuleParser {
 
@@ -12,11 +12,13 @@ public static class RuleParser {
 	 * @param rules - string - the rules to apply to the GameObject.
 	 * @param ruleLines - List - a list of strings of one rule per entry.
 	 */
+	/// <summary>Parses a multiline rule block and applies its recognized rules to a room.</summary>
 	public static void implement(GameObject room, string rules)
 	{
 		// implement each rule on the specified room.
 		parse (rules).ForEach ((Rule r) => r.implement(room));
 	}
+	/// <summary>Applies already-separated rule lines to a room.</summary>
 	public static void implement(GameObject room, List<string> ruleLines)
 	{
 		// implement each rule on the specified room.

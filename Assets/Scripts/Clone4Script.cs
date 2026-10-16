@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
+using UnityEngine;
+    /// <summary>Applies movement, action, and tether controls to clone four.</summary>
 
 public class Clone4Script : MonoBehaviour {
 	private Player player;

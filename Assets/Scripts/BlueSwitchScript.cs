@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
+using UnityEngine;
+    /// <summary>Handles activation and deactivation of the blue switch.</summary>
 
 public class BlueSwitchScript : MonoBehaviour {
 

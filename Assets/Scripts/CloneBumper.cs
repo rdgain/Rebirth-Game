@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
+using UnityEngine;
+    /// <summary>Applies a push to a shadow player that collides with this bumper.</summary>
 
 public class CloneBumper : MonoBehaviour
 {

@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
+using UnityEngine;
+    /// <summary>Applies the upward sliding effect while an object occupies this tile.</summary>
 
 public class SlideUpScript : MonoBehaviour {
 	private Player player;

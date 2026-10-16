@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
+using UnityEngine;
+    /// <summary>Moves clone three using its steering behavior.</summary>
 
 public class Clone3Script : MonoBehaviour {
 	//private Animator anim_controller;

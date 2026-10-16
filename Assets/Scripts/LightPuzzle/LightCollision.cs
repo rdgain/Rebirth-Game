@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
+using UnityEngine;
+    /// <summary>Removes light particles that collide with puzzle objects.</summary>
 
 public class LightCollision : MonoBehaviour {
 

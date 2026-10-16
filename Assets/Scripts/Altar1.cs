@@ -1,6 +1,6 @@
-﻿using System;
+using System;
 using UnityEngine;
-using System.Collections;
+    /// <summary>Tracks objects placed on the altar and evaluates its completion state.</summary>
 
 public class Altar1 : MonoBehaviour {
 

@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
+using UnityEngine;
+    /// <summary>Activates permanently when a player or clone presses the switch.</summary>
 
 public class PermaSwitch : MonoBehaviour {
 

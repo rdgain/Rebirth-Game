@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
+using UnityEngine;
+    /// <summary>Handles player interaction with a chest and starts its puzzle or reward flow.</summary>
 
 public class ChestScript : MonoBehaviour {
 

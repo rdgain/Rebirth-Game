@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
+using UnityEngine;
+    /// <summary>Follows the active player and clone positions.</summary>
 
 public class CameraControl : MonoBehaviour {
 	Player player;

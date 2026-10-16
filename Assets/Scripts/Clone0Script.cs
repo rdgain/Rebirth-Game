@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
+using UnityEngine;
+    /// <summary>Applies direct movement input to clone zero.</summary>
 
 public class Clone0Script : MonoBehaviour {
 	private Player player;

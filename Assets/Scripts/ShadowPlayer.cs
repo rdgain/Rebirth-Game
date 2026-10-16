@@ -1,6 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
-using UnityEngine.Networking;
+using UnityEngine;
+    /// <summary>Implements clone movement, animation, and position control.</summary>
 
 public class ShadowPlayer : MonoBehaviour
 {
@@ -81,28 +80,33 @@ public class ShadowPlayer : MonoBehaviour
         }
     }
 
+    /// <summary>Sets the clone's movement vector and updates its directional animation.</summary>
     public void SetVelocity(Vector3 velocity)
     {
         this.velocity = velocity;
         SetAnimation(velocity);
     }
 
+    /// <summary>Returns the clone's current movement vector.</summary>
     public Vector3 GetVelocity()
     {
         return velocity;
     }
 	
+	/// <summary>Reverses the clone's horizontal and vertical movement.</summary>
 	public void ReverseVelocity() {
 		Vector3 vel = velocity;
 		Vector3 temp = new Vector3 (-vel.x, -vel.y, vel.z);
 		this.velocity = temp;
 	}
 
+    /// <summary>Moves the clone to a world-space position.</summary>
     public void SetPosition(Vector3 position)
     {
         transform.position = position;
     }
 
+    /// <summary>Returns the clone's current world-space position.</summary>
     public Vector3 GetPosition()
     {
         return transform.position;

@@ -1,6 +1,6 @@
-﻿using UnityEngine;
-using System.Collections;
+using UnityEngine;
 using UnityEngine.SceneManagement;
+    /// <summary>Coordinates level flow, timer state, dialog, restart, and scene transitions.</summary>
 
 public class Temple : MonoBehaviour
 {
@@ -126,12 +126,14 @@ public class Temple : MonoBehaviour
         
     }
 
-    public void LoadLevel(int level)
+	/// <summary>Loads the numbered Rebirth scene.</summary>
+	public void LoadLevel(int level)
     {
 		//Application.LoadLevel("Rebirth"+level);
         SceneManager.LoadScene("Rebirth"+level);
     }
 
+    /// <summary>Loads the scene after the current level.</summary>
     public void LoadNextLevel()
     {
         LoadLevel(CurrentLevel+1);
@@ -147,6 +149,7 @@ public class Temple : MonoBehaviour
 		Application.Quit();
 	}
 
+	/// <summary>Restarts the current level scene.</summary>
 	public void Restart()
 	{
 	    if (state < 3)

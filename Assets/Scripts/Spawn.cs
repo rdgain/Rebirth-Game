@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
+using UnityEngine;
+    /// <summary>Places the player at the room spawn position during initialization.</summary>
 
 public class Spawn : MonoBehaviour {
 

@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
+using UnityEngine;
+    /// <summary>Moves the block in the requested direction when the adjacent space is clear.</summary>
 
 public class MovingBlock : MonoBehaviour {
 

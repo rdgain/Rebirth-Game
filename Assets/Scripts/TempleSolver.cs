@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
+using UnityEngine;
+    /// <summary>Checks the temple room objectives and advances when they are complete.</summary>
 
 public class TempleSolver : MonoBehaviour {
 

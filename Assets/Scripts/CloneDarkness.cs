@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
+using UnityEngine;
+    /// <summary>Controls the darkness effect associated with the clone.</summary>
 
 public class CloneDarkness : MonoBehaviour
 {

@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
+using UnityEngine;
+    /// <summary>Responds to a completed trigger condition and advances the game state.</summary>
 
 public class BigButton : MonoBehaviour {
 

@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
+using UnityEngine;
+    /// <summary>Animates doors and manages their collision behavior.</summary>
 
 public class DoorController : MonoBehaviour {
 

@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
+using UnityEngine;
+    /// <summary>Checks the colored switch combination and reports puzzle completion.</summary>
 
 public class RGBSwitchSolver : MonoBehaviour {
 	private RedSwitchScript switchR;

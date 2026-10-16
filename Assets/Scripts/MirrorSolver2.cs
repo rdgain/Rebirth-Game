@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
+using UnityEngine;
+    /// <summary>Checks the room light puzzle and updates its linked switches.</summary>
 
 public class MirrorSolver2 : MonoBehaviour {
 	public GameObject lightSink = null;

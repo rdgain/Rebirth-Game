@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
+using UnityEngine;
+    /// <summary>Applies direct movement input to clone one.</summary>
 
 public class Clone1Script : MonoBehaviour {
     private MapEngine mapEngine;

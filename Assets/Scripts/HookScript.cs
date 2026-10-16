@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
+using UnityEngine;
+    /// <summary>Coordinates player and clone movement when either reaches the hook.</summary>
 
 public class HookScript : MonoBehaviour {
 	private Player player;

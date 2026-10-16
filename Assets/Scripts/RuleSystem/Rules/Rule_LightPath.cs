@@ -1,6 +1,6 @@
-﻿using UnityEngine;
-using System.Collections;
+using UnityEngine;
 using System.Collections.Generic;
+    /// <summary>Implements the light-path rule used to validate a mirror puzzle.</summary>
 
 public class Rule_LightPath : Rule {
 	private string key;

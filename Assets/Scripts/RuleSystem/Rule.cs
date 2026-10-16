@@ -1,6 +1,6 @@
-﻿using UnityEngine;
-using System.Collections;
+using UnityEngine;
 using System.Collections.Generic;
+    /// <summary>Defines the base contract for parsing and applying a room rule.</summary>
 
 public abstract class Rule {
 	public string name { get; protected set; }

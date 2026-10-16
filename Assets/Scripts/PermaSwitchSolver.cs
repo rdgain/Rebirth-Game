@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
+using UnityEngine;
+    /// <summary>Coordinates the permanent switches that solve its room puzzle.</summary>
 
 public class PermaSwitchSolver : MonoBehaviour
 {

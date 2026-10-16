@@ -1,6 +1,5 @@
-﻿using System.Text;
 using UnityEngine;
-using System.Collections;
+    /// <summary>Calculates whether a light source, mirror, or sink is aligned with its neighbors.</summary>
 
 public class LightCheck : MonoBehaviour {
 	public GameObject previousMirror = null;

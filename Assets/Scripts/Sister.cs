@@ -1,6 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
-using UnityEngine.Networking;
+using UnityEngine;
+    /// <summary>Controls the sister character and her interaction trigger.</summary>
 
 public class Sister : MonoBehaviour
 {

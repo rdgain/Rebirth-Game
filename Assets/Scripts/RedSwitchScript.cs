@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
+using UnityEngine;
+    /// <summary>Handles activation and deactivation of the red switch.</summary>
 
 public class RedSwitchScript : MonoBehaviour {
 

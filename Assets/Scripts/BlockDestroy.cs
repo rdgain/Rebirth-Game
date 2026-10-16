@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
+using UnityEngine;
+    /// <summary>Removes this block after another game object activates it.</summary>
 
 public class BlockDestroy : MonoBehaviour {
 	private bool activated;

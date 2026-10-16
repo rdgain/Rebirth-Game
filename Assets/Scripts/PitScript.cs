@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
+using UnityEngine;
+    /// <summary>Handles collisions with the pit and applies the associated game effect.</summary>
 
 public class PitScript : MonoBehaviour
 {

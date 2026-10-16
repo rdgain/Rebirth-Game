@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
+using UnityEngine;
+    /// <summary>Synchronizes a bridge with the switches that control it.</summary>
 
 public class BridgeFunc : MonoBehaviour {
 

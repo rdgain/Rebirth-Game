@@ -1,8 +1,6 @@
-﻿using System;
 using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
+    /// <summary>Applies room rules and unlocks the chest when the light puzzle is solved.</summary>
 
 public class mirrorSolver : MonoBehaviour {
 	public GameObject lightSink = null;

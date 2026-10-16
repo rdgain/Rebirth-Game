@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
+using UnityEngine;
+    /// <summary>Applies the rightward sliding effect while an object occupies this tile.</summary>
 
 public class SlideRightScript : MonoBehaviour {
 	private Player player;

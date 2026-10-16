@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
+using UnityEngine;
+    /// <summary>Creates or removes a bridge when its trigger is activated.</summary>
 
 public class BridgeScript : MonoBehaviour
 {

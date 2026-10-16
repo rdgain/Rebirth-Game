@@ -1,8 +1,6 @@
-﻿using System;
 using UnityEngine;
-using System.Collections;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
+    /// <summary>Animates and activates the stopwatch room-restart control.</summary>
 
 public class StopWatch : MonoBehaviour
 {

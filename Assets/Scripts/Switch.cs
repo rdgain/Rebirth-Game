@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
+using UnityEngine;
+    /// <summary>Tracks when a player or clone presses or leaves the switch.</summary>
 
 public class Switch : MonoBehaviour {
 
