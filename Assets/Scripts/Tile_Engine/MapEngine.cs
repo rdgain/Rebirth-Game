@@ -381,7 +381,7 @@ public class MapEngine : MonoBehaviour
 
 		Legend = new Dictionary<char, string>();
 
-		string[] data = LevelData.text.Split(new string[] { "\n- " }, StringSplitOptions.RemoveEmptyEntries);
+		string[] data = LevelData.text.Replace("\r", "").Split(new string[] { "\n- " }, StringSplitOptions.RemoveEmptyEntries);
 
 		Name = data[0];
 
