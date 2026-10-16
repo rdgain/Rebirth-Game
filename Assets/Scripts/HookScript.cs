@@ -37,7 +37,7 @@ public class HookScript : MonoBehaviour {
 		//reset velocity when object leaves and flag it appropriately
 		if (other.gameObject.tag == "Player") {
 			playerHere = false;
-			player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+			player.GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
 		}
 		if (other.gameObject.tag == "Clone") {
 			cloneHere = false;

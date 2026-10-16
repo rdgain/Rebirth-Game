@@ -16,7 +16,7 @@ public class SlideUpScript : MonoBehaviour {
 	
 	void OnTriggerExit2D(Collider2D other) {
 		if (other.gameObject.tag == "Player") {
-            player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            player.GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
         }
 	}
 	

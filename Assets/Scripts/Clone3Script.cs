@@ -30,7 +30,7 @@ public class Clone3Script : MonoBehaviour {
 		radius2 = 30;
 		maxCount = 30;
 		counter = maxCount;
-		currentVelocity = clone.transform.GetComponent<Rigidbody2D>().velocity;
+		currentVelocity = clone.transform.GetComponent<Rigidbody2D>().linearVelocity;
 	}
 	
 	void FixedUpdate ()
@@ -50,7 +50,7 @@ public class Clone3Script : MonoBehaviour {
 	            if (counter == maxCount)
 	            {
 	                counter = 0;
-	                clone.transform.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+	                clone.transform.GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
 	                Vector2 init = Vector2.zero;
 
 	                // get point on first big circle
