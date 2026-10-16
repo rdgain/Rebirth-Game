@@ -110,6 +110,11 @@ public class Temple : MonoBehaviour
     {
         if (state < 3)
         {
+            if (elapsing)
+            {
+                StopTime();
+            }
+
             state = 3;
             player.SetPlayerControl(false);
             Debug.Log("Finished Level " + CurrentLevel);
@@ -148,14 +153,7 @@ public class Temple : MonoBehaviour
 	/// <summary>Restarts the current level scene.</summary>
 	public void Restart()
 	{
-	    if (state < 3)
-	    {
-	        LoadLevel(CurrentLevel);
-	    }
-	    else
-	    {
-            LoadLevel(1);
-        }
+	    LoadLevel(CurrentLevel);
 	}
 
 	public void Pause()

@@ -21,9 +21,17 @@ public class BlueSwitchScript : MonoBehaviour {
 
 	void OnTriggerStay2D(Collider2D other) {
 		if (!triggered) {
-			activate();
-			if (switchR.triggered && !switchG.triggered) switchR.deactivate();
+			if (switchR.triggered && switchG.triggered)
+				activate();
+			else
+				ResetSequence();
 		}
+	}
+
+	private void ResetSequence() {
+		switchR.deactivate();
+		switchG.deactivate();
+		deactivate();
 	}
 	
 	public void activate() {		

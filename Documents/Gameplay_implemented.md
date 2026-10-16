@@ -58,22 +58,55 @@ The Temple 1 introduction text says the player has five minutes; this agrees wit
 The level data includes bridge and clone-control rooms, mirror and switch puzzles, a clone stealth room, and a sliding-tile/permanent-switch room.
 
 - In the bridge room, ordinary switches activate bridges while held and deactivate them when released; permanent switches activate their assigned bridges. Another switch destroys a named block.
-- The first mirror room has a `MirrorSolver2`, but its mirror-angle validation is commented out. The active solver checks that all child switches are triggered before unlocking the chest.
-- The red, green, and blue switches have state-reset interactions. However, `RGBSwitchSolver` currently checks `switchB && switchR && switchB`; it checks blue twice and does not require green. This differs from the room-file comment describing an R-G-B sequence.
+- The first mirror room's `MirrorSolver2` requires the configured light path to be within tolerance and every child switch to be triggered before unlocking the chest.
+- The red, green, and blue switches accept the R → G → B order. Pressing a switch out of order resets all three; `RGBSwitchSolver` unlocks the chest only when all three are triggered.
 - The trap switch enables surrounding pit colliders; the darkness controller changes which character’s light is enabled from the two light switches.
 - The stealth room’s Clone 3 AI wanders, detects the player with cardinal raycasts, chases when detected, and applies timer penalties while chasing.
-- The final room contains sliding tiles, hooks, and permanent switches. Sliding scripts apply directional impulse to the player, and hooks react to player/clone occupancy. The room’s Clone 4 control/tether behavior is inactive because its controller code is commented out.
+- The final room contains sliding tiles, hooks, and permanent switches. The room-file differences for sliding and hook behavior, plus the inactive Clone 4 controller, are described below.
 - `PermaSwitchSolver` unlocks its chest when all tagged child permanent switches are triggered.
 
-## Code-observed caveats for review
+## Room-file comments compared with active behavior
 
-These are observations from the current code, not proposed changes:
+Temple 1’s room files have no `Comments` sections. Its `Rules` sections are parsed configuration, not prose commentary. Temple 2’s `puzzle0` notes about switch-to-bridge mappings and temporary/permanent bridges match `BridgeFunc` and `BridgeScript`; switch 6 removes `BlockDestroy`, as the comment says.
 
-- `Temple.LevelFinished()` does not stop the timer. If the timer remains active and later expires, `Temple.Update()` can still call `Failure()` after a level has been marked finished.
-- `Temple.Restart()` reloads the current level while the game is active, but after the terminal state it always loads level 1.
-- `MapEngine.CreateMap()` passes `StartRoomX` as both the X and Y coordinate when placing the start room, even though level files include a `StartRoomY` value.
-- The Clone 4 room notes describe control and tether rules that are not active in the script.
-- Some room comments describe puzzle conditions that differ from the active solver checks, as noted above.
+The following differences are in Temple 2 room comments:
+
+### Temple2/puzzle1.txt
+
+- **Room note (line 42):** “win condition: mirros in right position, switch pressed => chest opens, get reward.” `MirrorSolver2.Update()` now requires the sink's `LightCheck.inToleranceFromSource()` to pass and every child `Switch` to be triggered before unlocking the chest. The reward wording is not reflected as an altar reward: Temple 2 has no altar and `ChestScript` has no altar to receive an item.
+- **Room note (line 43):** the clone can be controlled directly and uses player movement input. `Clone1Script` toggles direct clone control with E and applies the shared movement input, matching the updated note.
+- The reward wording on line 42 is not reflected as an altar reward in this scene. Temple 2’s room data contains no altar. `ChestScript` therefore has no altar to receive an item; it still sets `openned` for level progression.
+
+### Temple2/puzzle2.txt
+
+- **Room notes (lines 67–69):** the R → G → B order and reset-on-error behavior are implemented by the colored switch scripts; `RGBSwitchSolver` unlocks the chest once all three are triggered. The solver polls switch state, while the scripts enforce which switch can activate next. The room note's “get reward” wording is not reflected as an altar reward: Temple 2 has no altar and `ChestScript` has no altar to receive an item.
+- **Room note (line 74):** the clone-light vision description now matches the `ShadowPlayer` prefab setup: range 25 and spot angle 25 degrees. `CloneDarkness` switches between the player and clone lights; it does not separately enforce a 5-by-5 gameplay boundary.
+- The reward wording on line 69 is not reflected as an altar reward in this scene. Temple 2’s room data contains no altar. `ChestScript` still opens the chest and sets `openned` for level progression.
+
+### Temple2/puzzle3.txt
+
+- **Room notes (lines 46–48):** the player “have[s] to cross room without being seen” and being spotted causes a time penalty. `Clone3Script` detects and chases the player, and penalizes the timer while doing so, but being seen does not itself block the player, fail the room, or trigger completion. Level progression is handled by the four opened chests and the spawned sister.
+- **Room note (line 47):** the player can “spawn at any door” and doors are locked selectively. This room has one `Spawn` object at a fixed position and fixed `Door`/`Door_Locked` objects in its room data. `Spawn` uses the placed spawn object; no active script selects a spawn door or randomly chooses which doors to lock.
+- The comments that the clone wanders, chases when it spots the player, and cannot be controlled match the active Clone 3 behavior at a high level. Detection uses four cardinal raycasts.
+
+### Temple2/puzzle4.txt
+
+- **Room notes (lines 42–44):** directional tiles slide until a wall, pit, or normal floor. `SlideRightScript`, `SlideUpScript`, and `SlideDownScript` apply directional impulses to the player while the player remains in the trigger and zero the player’s Rigidbody velocity on trigger exit. They do not move the tile or explicitly test for those three stopping surfaces.
+- **Room note (line 48):** either character slides through when the other occupies a hook. `HookScript` applies an impulse to the player if the clone is already there. The reverse case, pushing the clone when the player is already there, is commented out.
+- **Room notes (lines 46, 50, and 52):** a four-tile tether, anchoring at the tether limit, and switching control to the clone. `Clone4Script.FixedUpdate()` is entirely commented out, so none of those behaviors is active.
+- **Room note (line 51):** the permanent-switch win condition matches `PermaSwitchSolver`, which unlocks the chest once all tagged child permanent switches are triggered. The reward wording has the same limitation as the other Temple 2 chests: no altar is present to record an altar reward.
+- The pit-reset comment is supported by `PitScript`, which moves the player or clone to the corresponding room spawn point when they enter a pit.
+
+## Previously noted code issues resolved
+
+- `Temple.LevelFinished()` now stops an active timer before marking the level complete, preventing a later timeout from replacing the success state with game over.
+- `Temple.Restart()` now always reloads `CurrentLevel`, including after success or failure.
+- `MapEngine.CreateMap()` now places the start room using `StartRoomX` and `StartRoomY`.
+
+## Additional code issues for review
+
+- `Rule_Win` is registered in `AppliedRules`, but its `isThisRule`, `implement`, and `parse` methods throw `NotImplementedException`. Current room rule data only uses `lightPath`, so the stub is not invoked by the present scenes.
+- `RuleParser.parse(List<string>)` checks `sections[0][0]` for every rule line instead of checking `sections[i][0]`. Current room data has one rule line per room; adding multiple different rule lines would dispatch them using the first line’s key.
 
 ## Main scripts
 

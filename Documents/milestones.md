@@ -18,6 +18,7 @@ This document tracks the requested modernization and validation work. Progress d
 
 - Added [Gameplay_implemented.md](Gameplay_implemented.md), describing scene and level flow, controls, player and clone behavior, puzzles, UI, and code-observed caveats.
 - The document distinguishes active behavior from comments or room notes whose behavior is not implemented by the current scripts.
+- Updated the document after fixing timer completion, level restart, and start-room coordinates; added room-by-room comparisons for Temple 2 comments.
 
 ## Milestone 3: Cross-reference gameplay with the requirements and plan
 

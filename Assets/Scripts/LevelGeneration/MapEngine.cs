@@ -445,7 +445,7 @@ public class MapEngine : MonoBehaviour
 
 	    Queue<Doors> exits = new Queue<Doors>();
 
-		CreateRoom(int.Parse(levelInfo["StartRoomX"]), int.Parse(levelInfo["StartRoomX"]), usedRooms[0]);
+		CreateRoom(int.Parse(levelInfo["StartRoomX"]), int.Parse(levelInfo["StartRoomY"]), usedRooms[0]);
 
 		foreach (var exit in rooms[usedRooms[0]].Exits)
 		{

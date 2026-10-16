@@ -21,10 +21,17 @@ public class RedSwitchScript : MonoBehaviour {
 
 	void OnTriggerStay2D(Collider2D other) {
 		if (!triggered) {
-			activate();
-			if (switchB.triggered) switchB.deactivate();
-			if (switchG.triggered) switchG.deactivate();
+			if (!switchG.triggered && !switchB.triggered)
+				activate();
+			else
+				ResetSequence();
 		}
+	}
+
+	private void ResetSequence() {
+		deactivate();
+		switchG.deactivate();
+		switchB.deactivate();
 	}
 	
 	public void activate() {		
